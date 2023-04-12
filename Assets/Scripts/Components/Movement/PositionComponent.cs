@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace EcsOpeningDoors.Component
 {
-    public struct MovementRequest
+    public struct PositionComponent
     {
-        public Vector3 Position;
+        public Vector3 Value;
     }
 }
