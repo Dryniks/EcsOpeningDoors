@@ -1,5 +1,6 @@
-using EcsOpeningDoors.Component;
+using UnityEngine;
 using Leopotam.EcsLite;
+using EcsOpeningDoors.Component;
 
 namespace EcsOpeningDoors.System
 {
@@ -7,7 +8,13 @@ namespace EcsOpeningDoors.System
     {
         private readonly IInputController _inputController;
 
-        private EcsWorld _world;
+        private EcsFilter _inputFilter;
+        private EcsFilter _interruptionFilter;
+
+        private EcsPool<MovementRequestComponent> _movementRequestsPool;
+        private EcsPool<PositionComponent> _positionsPool;
+        private EcsPool<RotationRequestComponent> _rotationRequestsPool;
+        private EcsPool<InterruptionComponent> _interruptionsPool;
 
         public InputSystem(IInputController inputController)
         {
@@ -16,20 +23,40 @@ namespace EcsOpeningDoors.System
 
         public void Init(IEcsSystems systems)
         {
-            _world = systems.GetWorld();
+            var world = systems.GetWorld();
+
+            _inputFilter = world.Filter<CharacterComponent>().Inc<PositionComponent>().End();
+            _interruptionFilter = world.Filter<CharacterComponent>().Inc<MovementRequestComponent>().End();
+
+            _movementRequestsPool = world.GetPool<MovementRequestComponent>();
+            _positionsPool = world.GetPool<PositionComponent>();
+            _rotationRequestsPool = world.GetPool<RotationRequestComponent>();
+            _interruptionsPool = world.GetPool<InterruptionComponent>();
         }
 
         public void Run(IEcsSystems systems)
         {
-            var pos = _inputController.GetPosition();
-            if (!pos.HasValue)
+            var targetPosition = _inputController.GetPosition();
+            if (!targetPosition.HasValue)
                 return;
 
-            var entity = _world.NewEntity();
-            var pool = _world.GetPool<MovementRequest>();
+            var positionValue = targetPosition.Value;
 
-            ref var request = ref pool.Add(entity);
-            request.Position = pos.Value;
+            foreach (var entity in _interruptionFilter)
+                _interruptionsPool.Add(entity);
+
+            foreach (var entity in _inputFilter)
+            {
+                ref var movementRequest = ref _movementRequestsPool.GetOrAddComponent(entity);
+                movementRequest.Value = positionValue;
+
+                var currentPosition = _positionsPool.Get(entity).Value;
+                var direction = (positionValue - currentPosition).normalized;
+                var rotate = Quaternion.LookRotation(direction);
+
+                ref var rotationRequest = ref _rotationRequestsPool.GetOrAddComponent(entity);
+                rotationRequest.Value = rotate;
+            }
         }
     }
 }
