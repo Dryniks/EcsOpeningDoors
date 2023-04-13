@@ -4,7 +4,7 @@ using EcsOpeningDoors.Component;
 
 namespace EcsOpeningDoors.System
 {
-    public class RotationCompletionSystem : IEcsInitSystem, IEcsRunSystem
+    public class CheckRotationCompletionSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsFilter _filter;
 

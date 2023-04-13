@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using Leopotam.EcsLite;
 using EcsOpeningDoors.Component;
@@ -10,7 +11,7 @@ namespace EcsOpeningDoors.System
 
         private EcsFilter _filter;
 
-        private EcsPool<MovableViewComponent> _viewsPool;
+        private EcsPool<MovableViewComponent> _viewsPool; //TODO брать всех актеров из статического класса
         private EcsPool<MovementRequestComponent> _movementRequestsPool;
         private EcsPool<PositionComponent> _positionsPool;
         private EcsPool<MovementSpeedComponent> _speedsPool;

@@ -2,6 +2,6 @@ namespace EcsOpeningDoors.Component
 {
     public struct ActorComponent
     {
-        public IActorView Actor;
+        public IActorView Actor;//TODO Delete This
     }
 }

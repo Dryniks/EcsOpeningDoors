@@ -4,7 +4,7 @@ using EcsOpeningDoors.Component;
 
 namespace EcsOpeningDoors.System
 {
-    public class MovementCompletionSystem : IEcsInitSystem, IEcsRunSystem
+    public class CheckMovementCompletionSystem : IEcsInitSystem, IEcsRunSystem
     {
         private const float MinDistance = 0.1f;
 

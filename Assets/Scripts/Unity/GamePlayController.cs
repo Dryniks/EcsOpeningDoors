@@ -31,9 +31,9 @@ namespace EcsOpeningDoors.Unity
             _updateSystems = new EcsSystems(_ecsWorld)
                 .Add(new InputSystem(inputController))
                 .Add(new InterruptionSystem())
-                .Add(new RotationCompletionSystem())
+                .Add(new CheckRotationCompletionSystem())
                 .Add(new AccelerationSystem(_timeService))
-                .Add(new MovementCompletionSystem())
+                .Add(new CheckMovementCompletionSystem())
                 .Add(new MovementAnimationSystem())
                 .Add(new CleaningSystem());
 
