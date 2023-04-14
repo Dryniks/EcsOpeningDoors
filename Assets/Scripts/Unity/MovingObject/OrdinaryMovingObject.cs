@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace EcsOpeningDoors.Unity
 {
-    public class OrdinaryMovable : Movable
+    public sealed class OrdinaryMovingObject : MovingObject
     {
         public override void SetPosition(Vector3 position)
         {

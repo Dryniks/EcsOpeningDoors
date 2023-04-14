@@ -1,6 +1,6 @@
 namespace EcsOpeningDoors
 {
-    public interface IActorView
+    public interface IActor : IObject
     {
         void StartRun();
 

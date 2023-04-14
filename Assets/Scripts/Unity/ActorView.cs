@@ -3,7 +3,7 @@ using UnityEngine;
 namespace EcsOpeningDoors.Unity
 {
     [RequireComponent(typeof(ObjectView))]
-    public class ActorView : MonoBehaviour, IActorView
+    public class ActorView : MonoBehaviour, IActor
     {
         [SerializeField] private Animator _animator;
 

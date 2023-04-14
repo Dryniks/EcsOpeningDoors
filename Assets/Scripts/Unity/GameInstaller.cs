@@ -11,18 +11,8 @@ namespace EcsOpeningDoors.Unity
         public override void InstallBindings()
         {
             BindCharacter();
-            BindInputController();
-            BindTimeService();
-        }
 
-        private void BindInputController()
-        {
-            Container.BindInterfacesTo<InputController>().AsSingle();
-        }
-
-        private void BindTimeService()
-        {
-            Container.Bind<TimeService>().AsSingle();
+            BindSystemInstaller();
         }
 
         private void BindCharacter()
@@ -31,6 +21,11 @@ namespace EcsOpeningDoors.Unity
                 _characterSpawnPoint.position, _characterSpawnPoint.rotation, null);
 
             Container.BindInterfacesTo<ActorView>().FromInstance(character).AsSingle();
+        }
+        
+        private void BindSystemInstaller()
+        {
+            Container.Install<SystemsInstaller>();
         }
     }
 }

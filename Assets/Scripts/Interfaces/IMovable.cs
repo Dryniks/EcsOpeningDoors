@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace EcsOpeningDoors
 {
-    public interface IMovable
+    public interface IMovable : IObject
     {
         void SetPosition(Vector3 position);
     }

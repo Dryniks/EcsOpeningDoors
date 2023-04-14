@@ -3,7 +3,7 @@ using UnityEngine;
 namespace EcsOpeningDoors.Unity
 {
     [RequireComponent(typeof(ObjectView))]
-    public class AccelerationView : MonoBehaviour
+    public sealed class AccelerationObject : MonoBehaviour
     {
         public float MaxDuration;
     }

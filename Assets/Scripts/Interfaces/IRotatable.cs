@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace EcsOpeningDoors
 {
-    public interface IRotatable
+    public interface IRotatable : IObject
     {
         void SetRotation(Quaternion rotation);
     }

@@ -37,7 +37,7 @@ namespace EcsOpeningDoors.System.Unity
 
         private static void InitRotatableComponents(EcsWorld world, UnityEngine.Component component, int entity)
         {
-            var rotatableView = component.GetComponent<Rotatable>();
+            var rotatableView = component.GetComponent<RotatingObject>();
             if (rotatableView == null)
                 return;
 
@@ -58,7 +58,7 @@ namespace EcsOpeningDoors.System.Unity
 
         private static void InitMovableComponents(EcsWorld world, UnityEngine.Component component, int entity)
         {
-            var movableView = component.GetComponent<Movable>();
+            var movableView = component.GetComponent<MovingObject>();
             if (movableView == null)
                 return;
 
@@ -79,7 +79,7 @@ namespace EcsOpeningDoors.System.Unity
 
         private static void InitAccelerationToComponent(EcsWorld world, UnityEngine.Component transform, int entity)
         {
-            var accelerationView = transform.GetComponent<AccelerationView>();
+            var accelerationView = transform.GetComponent<AccelerationObject>();
             if (accelerationView == null)
                 return;
 

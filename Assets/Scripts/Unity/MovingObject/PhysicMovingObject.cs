@@ -3,13 +3,13 @@ using UnityEngine;
 namespace EcsOpeningDoors.Unity
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class PhysicRotatable : Rotatable
+    public sealed class PhysicMovingObject : MovingObject
     {
         [SerializeField] private Rigidbody _rigidbody;
 
-        public override void SetRotation(Quaternion rotation)
+        public override void SetPosition(Vector3 position)
         {
-            _rigidbody.MoveRotation(rotation);
+            _rigidbody.MovePosition(position);
         }
     }
 }

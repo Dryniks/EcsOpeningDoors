@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using Leopotam.EcsLite;
 using EcsOpeningDoors.Component;
@@ -7,19 +6,12 @@ namespace EcsOpeningDoors.System
 {
     public class MovementSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly TimeService _timeService;
-
         private EcsFilter _filter;
 
         private EcsPool<MovableViewComponent> _viewsPool; //TODO брать всех актеров из статического класса
         private EcsPool<MovementRequestComponent> _movementRequestsPool;
         private EcsPool<PositionComponent> _positionsPool;
         private EcsPool<MovementSpeedComponent> _speedsPool;
-
-        public MovementSystem(TimeService timeService)
-        {
-            _timeService = timeService;
-        }
 
         public void Init(IEcsSystems systems)
         {
@@ -41,13 +33,15 @@ namespace EcsOpeningDoors.System
 
         public void Run(IEcsSystems systems)
         {
+            var deltaTime = systems.GetShared<TimeService>().DeltaTime;
+
             foreach (var entity in _filter)
             {
                 var movementRequest = _movementRequestsPool.Get(entity);
                 var speed = _speedsPool.Get(entity).Value;
                 var view = _viewsPool.Get(entity).View;
 
-                var maxDistanceDelta = _timeService.FixedDeltaTime * speed;
+                var maxDistanceDelta = deltaTime * speed;
 
                 ref var position = ref _positionsPool.Get(entity);
                 position.Value = Vector3.MoveTowards(position.Value, movementRequest.Value, maxDistanceDelta);
