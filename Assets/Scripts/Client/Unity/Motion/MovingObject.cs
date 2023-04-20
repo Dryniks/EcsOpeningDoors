@@ -13,11 +13,16 @@ namespace EcsOpeningDoors.Unity
 
         public override Dictionary<Type, object> GetData()
         {
-            return new()
+            var dict = new Dictionary<Type, object>
             {
                 {typeof(Position), new Position {Value = transform.position}},
                 {typeof(MovementSpeedTo), new MovementSpeedTo {Value = _speed}},
             };
+
+            if (GetComponent<AccelerationObject>() == null)
+                dict.Add(typeof(MovementSpeed), new MovementSpeed {Value = _speed});
+
+            return dict;
         }
 
         public override void SetData(object data)

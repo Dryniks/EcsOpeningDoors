@@ -14,6 +14,7 @@ namespace EcsOpeningDoors.Unity
             Container.Bind<IEcsSystem>().To<RotationSystem>().AsTransient();
             Container.Bind<IEcsSystem>().To<AccelerationSystem>().AsSingle();
             Container.Bind<IEcsSystem>().To<MovementSystem>().AsSingle();
+            Container.Bind<IEcsSystem>().To<CameraSystem>().AsSingle();
         }
     }
 }
