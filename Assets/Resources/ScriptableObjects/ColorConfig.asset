@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad65a95257247f4bc5d61b87df4f00a, type: 3}
+  m_Name: ColorConfig
+  m_EditorClassIdentifier: 
+  _models:
+  - Id: RedDoor
+    Color: {r: 0.9528302, g: 0, b: 0, a: 1}
+  - Id: GreenDoor
+    Color: {r: 0.42271647, g: 0.9529412, b: 0, a: 1}
+  - Id: BlueDoor
+    Color: {r: 0, g: 0.101597436, b: 0.9529412, a: 1}

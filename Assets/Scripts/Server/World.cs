@@ -38,6 +38,9 @@ namespace EcsOpeningDoors
             _world.GetPool<Actor>();
             _world.GetPool<ClickPosition>();
             _world.GetPool<Scale>();
+            _world.GetPool<Button>();
+            _world.GetPool<Link>();
+            _world.GetPool<Door>();
         }
 
         public Dictionary<int, List<object>> GetStartData(Dictionary<int, List<object>> dictionary)

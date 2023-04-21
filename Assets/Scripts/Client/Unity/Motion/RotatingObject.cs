@@ -11,21 +11,25 @@ namespace EcsOpeningDoors.Unity
 
         public override Type Label => typeof(Rotation);
 
-        public override Dictionary<Type, object> GetData()
+        public override List<object> GetData()
         {
             return new()
             {
-                {typeof(Rotation), new Rotation {Value = transform.rotation}},
-                {typeof(RotationSpeedTo), new RotationSpeedTo {Value = _speed}},
+                new Rotation {Value = transform.rotation},
+                new RotationSpeedTo {Value = _speed}
             };
         }
 
         public override void SetData(object data)
         {
-            if (data is not Rotation rotation)
-                return;
+            if (data is Rotation rotation)
+                transform.rotation = rotation.Value;
 
-            transform.rotation = rotation.Value;
+            //Для визуального отображения скорости, дебажные данные
+#if UNITY_EDITOR
+            if (data is RotationSpeedTo speedTo)
+                _speed = speedTo.Value;
+#endif
         }
     }
 }

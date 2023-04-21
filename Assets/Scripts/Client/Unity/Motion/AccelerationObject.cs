@@ -11,13 +11,20 @@ namespace EcsOpeningDoors.Unity
 
         public override Type Label => typeof(AccelerationTo);
 
-        public override Dictionary<Type, object> GetData()
+        public override List<object> GetData()
         {
-            return new() {{typeof(AccelerationTo), new AccelerationTo {Value = _value}}};
+            return new() {new AccelerationTo {Value = _value}};
         }
 
         public override void SetData(object data)
         {
+            //Для визуального изменения ускорения, дебажные данные
+#if UNITY_EDITOR
+            if (data is not Acceleration acceleration)
+                return;
+
+            _value = acceleration.Value;
+#endif
         }
     }
 }

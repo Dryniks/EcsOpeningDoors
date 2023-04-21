@@ -47,6 +47,9 @@ namespace EcsOpeningDoors.System.Unity
                 }
 
                 _clickPositionsPool.Del(clickEntity);
+
+                var world = systems.GetWorld();
+                world.DelEntity(clickEntity);
             }
         }
     }

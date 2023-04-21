@@ -11,26 +11,30 @@ namespace EcsOpeningDoors.Unity
 
         public override Type Label => typeof(Position);
 
-        public override Dictionary<Type, object> GetData()
+        public override List<object> GetData()
         {
-            var dict = new Dictionary<Type, object>
+            var list = new List<object>()
             {
-                {typeof(Position), new Position {Value = transform.position}},
-                {typeof(MovementSpeedTo), new MovementSpeedTo {Value = _speed}},
+                new Position {Value = transform.position},
+                new MovementSpeedTo {Value = _speed}
             };
 
             if (GetComponent<AccelerationObject>() == null)
-                dict.Add(typeof(MovementSpeed), new MovementSpeed {Value = _speed});
+                list.Add(new MovementSpeed {Value = _speed});
 
-            return dict;
+            return list;
         }
 
         public override void SetData(object data)
         {
-            if (data is not Position position)
-                return;
+            if (data is Position position)
+                transform.position = position.Value;
 
-            transform.position = position.Value;
+            //Для визуального отображения данных скорости в инспекторе, дебажные данные
+#if UNITY_EDITOR
+            if (data is MovementSpeed movementSpeed)
+                _speed = movementSpeed.Value;
+#endif
         }
     }
 }

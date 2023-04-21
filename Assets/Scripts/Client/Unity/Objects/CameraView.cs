@@ -21,6 +21,11 @@ namespace EcsOpeningDoors.Unity
 
         protected override void HandleData(object data)
         {
+            //Для визуального отображения оффсета, дебажные данные
+#if UNITY_EDITOR
+            if (data is CameraComponent cameraComponent)
+                _offset = cameraComponent.Offset;
+#endif
         }
     }
 }
