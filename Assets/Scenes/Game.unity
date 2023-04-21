@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+      propertyPath: _id
+      value: GreenDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+      propertyPath: _radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5295065417369364428, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -382,6 +390,14 @@ PrefabInstance:
     - target: {fileID: 761540608937528184, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
       propertyPath: m_Name
       value: Button (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+      propertyPath: _id
+      value: BlueDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+      propertyPath: _radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5295065417369364428, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
       propertyPath: m_RootOrder
@@ -835,6 +851,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632142244986010666, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
+      propertyPath: _speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445934216689374697, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4195281311448475488, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -878,6 +902,10 @@ PrefabInstance:
     - target: {fileID: 4195281311448475488, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168405166818598261, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
+      propertyPath: _id
+      value: BlueDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
@@ -1095,6 +1123,8 @@ MonoBehaviour:
   _prefabs:
   - {fileID: 4071706007398652994, guid: 42d74cd11911549d993de999f31e47db, type: 3}
   - {fileID: 1342922126053187825, guid: a937229c8e81841b0a81e437efeabe1e, type: 3}
+  - {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+  - {fileID: 7168405166818598261, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
 --- !u!1001 &1337906608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1783,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7168405166818598261, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
+      propertyPath: _id
+      value: GreenDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
 --- !u!4 &1818741895 stripped
@@ -2159,9 +2193,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2632142244986010666, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
+      propertyPath: _speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4195281311448475488, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4195281311448475488, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2202,6 +2240,10 @@ PrefabInstance:
     - target: {fileID: 4195281311448475488, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168405166818598261, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
+      propertyPath: _id
+      value: RedDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bae8b6f11ad34e4cbb4a553d8cd8f3b, type: 3}
@@ -2354,6 +2396,14 @@ PrefabInstance:
     - target: {fileID: 761540608937528184, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+      propertyPath: _id
+      value: RedDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258228676579494496, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
+      propertyPath: _radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5295065417369364428, guid: a6e4df06ac6d14af891cd5a894a79d48, type: 3}
       propertyPath: m_RootOrder

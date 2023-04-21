@@ -8,7 +8,7 @@ namespace EcsOpeningDoors.Unity
     {
         public abstract Type Label { get; }
 
-        public abstract Dictionary<Type, object> GetData();
+        public abstract List<object> GetData();
 
         public abstract void SetData(object data);
     }
