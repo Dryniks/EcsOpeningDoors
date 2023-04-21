@@ -108,7 +108,7 @@ ModelImporter:
   referencedClips:
   - 97aa2bffdadc14a208a5eb109014acbd
   - 0456b8d0c5a3142e58e2ea5bced6c83f
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human:
