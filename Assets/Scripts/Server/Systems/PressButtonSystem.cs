@@ -11,7 +11,7 @@ namespace Server.Systems
         private EcsPool<Position> _positionsPool;
         private EcsPool<Button> _buttonsPool;
         private EcsPool<Link> _linksPool;
-        private EcsPool<PressButton> _pressButtonsPool;
+        private EcsPool<OpenSignal> _openSignalsPool;
 
         public void Init(IEcsSystems systems)
         {
@@ -23,7 +23,7 @@ namespace Server.Systems
             _positionsPool = world.GetPool<Position>();
             _buttonsPool = world.GetPool<Button>();
             _linksPool = world.GetPool<Link>();
-            _pressButtonsPool = world.GetPool<PressButton>();
+            _openSignalsPool = world.GetPool<OpenSignal>();
         }
 
         public void Run(IEcsSystems systems)
@@ -48,7 +48,7 @@ namespace Server.Systems
                     ref var link = ref _linksPool.Add(entity);
                     link.Id = buttonLink;
 
-                    _pressButtonsPool.Add(entity);
+                    _openSignalsPool.Add(entity);
                 }
             }
         }

@@ -1,6 +1,6 @@
 namespace EcsOpeningDoors.Component
 {
-    public struct PressButton
+    public struct OpenSignal
     {
     }
 }
