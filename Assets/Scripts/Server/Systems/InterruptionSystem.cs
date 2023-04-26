@@ -22,7 +22,6 @@ namespace EcsOpeningDoors.System
             var world = systems.GetWorld();
 
             _actorFilter = world.Filter<Actor>()
-                .Inc<Acceleration>()
                 .Inc<MovementSpeed>()
                 .Inc<Position>()
                 .End();
@@ -48,13 +47,16 @@ namespace EcsOpeningDoors.System
 
                     var direction = (clickPosition - actorPosition).normalized;
                     var rotate = Quaternion.LookRotation(direction);
-                    
+
                     var angle = Quaternion.Angle(rotate, actorRotation);
                     if (angle < AccelerationAngle)
                         continue;
 
-                    _accelerationsPool.Del(actorEntity);
+                    if (!_accelerationsPool.Has(actorEntity))
+                        continue;
+
                     _movementSpeedsPool.Del(actorEntity);
+                    _accelerationsPool.Del(actorEntity);
                 }
             }
         }

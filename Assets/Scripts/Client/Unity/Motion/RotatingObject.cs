@@ -15,6 +15,7 @@ namespace EcsOpeningDoors.Unity
         {
             return new()
             {
+                new Component.RotatingObject(),
                 new Rotation {Value = transform.rotation},
                 new RotationSpeedTo {Value = _speed}
             };

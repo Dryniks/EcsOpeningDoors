@@ -15,6 +15,7 @@ namespace EcsOpeningDoors.Unity
         {
             var list = new List<object>()
             {
+                new Component.MovingObject(),
                 new Position {Value = transform.position},
                 new MovementSpeedTo {Value = _speed}
             };

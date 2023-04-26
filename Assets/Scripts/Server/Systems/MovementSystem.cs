@@ -43,7 +43,7 @@ namespace EcsOpeningDoors.System
 
                 if (!Mathf.Approximately(Vector3.Distance(position.Value, movementRequest.Value), 0.0f))
                     continue;
-                
+
                 _movementRequestsPool.Del(entity);
             }
         }
